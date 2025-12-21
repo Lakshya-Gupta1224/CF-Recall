@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CF Recall",
+  "description": "Practice Codeforces problems using spaced repetition",
+  "version": "0.1",
+
+  "action": {
+    "default_popup": "index.html"
+  },
+
+  "background": {
+    "service_worker": "background/serviceWorker.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/problemset/problem/*/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+
+  "permissions": ["storage","tabs"],
+
+  "icons": {
+    "128": "/icons/icon.png"
+  }
+}

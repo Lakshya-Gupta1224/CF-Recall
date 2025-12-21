@@ -12,9 +12,16 @@
     "service_worker": "background/serviceWorker.js"
   },
 
-  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/problemset/problem/*/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+
+  "permissions": ["storage", "tabs"],
 
   "icons": {
-    "128": "icon.png"
+    "128": "/icons/icon.png"
   }
 }
